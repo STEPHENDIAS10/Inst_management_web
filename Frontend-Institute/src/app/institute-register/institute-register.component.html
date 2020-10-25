@@ -1,0 +1,185 @@
+<!-- Institute Registeration Form-->
+
+<div class="mx-4 my-4 row justify-content-center align-items-center">
+
+  <div class="col-lg-5 col-md-8 col-sm-12 col-xs-8 shadow">
+
+    <form class="formGroup px-4 py-4" [formGroup]="instituteRegistrationForm" [class.has-error]="
+
+        (instituteName.invalid && instituteName.touched) ||
+
+        (instituteType.invalid && instituteType.touched) ||
+
+        (addressLine1.invalid && addressLine1.touched) ||
+
+        (addressLine2.invalid && addressLine2.touched) ||
+
+        (state.invalid && state.touched) ||
+
+        (city.invalid && city.touched) ||
+
+        (pincode.invalid && pincode.touched)">
+
+      <!-- Institute Register Header -->
+      <div class="form-group text-center">
+        <h2 class="mx-auto">Institute Registration</h2>
+        <br />
+      </div>
+      <!-- Institute Register Header -->
+
+      <!-- Institute Name -->
+
+      <label for="instituteName">Institute Name </label>
+
+      <input type="text" class="form-control" pattern="^[a-zA-Z ]*$" formControlName="instituteName" />
+
+      <div class="text-danger" *ngIf="instituteName.invalid && (instituteName.dirty || instituteName.touched)">
+
+        Institute Name is required
+
+      </div>
+
+      <div *ngIf="instituteName.errors?.pattern" style="color: red;">
+
+        Institute Name is not valid.
+
+      </div>
+
+      <br />
+
+      <!-- /Institute Name -->
+
+      <!-- Institute Type -->
+
+      <label for="instituteType">Institute Type</label>
+
+      <input type="text" class="form-control" pattern="^[a-zA-Z ]*$" formControlName="instituteType" />
+
+      <div class="text-danger" *ngIf="instituteType.invalid && (instituteType.dirty || instituteType.touched)">
+
+        Institute Type is required
+
+      </div>
+
+      <div *ngIf="instituteType.errors?.pattern" style="color: red;">
+
+        Institute Type is not valid.
+
+      </div>
+
+      <br />
+
+      <!-- /Institute Type -->
+
+      <!-- Address Line 1 -->
+
+      <label for="addressLine1">Address Line 1 </label>
+
+      <input type="text" class="form-control" pattern="^(\w*\s*[\#\-\,\/\.\(\)\&]*)+" formControlName="addressLine1" />
+
+      <div class="text-danger" *ngIf="addressLine1.invalid && (addressLine1.dirty || addressLine1.touched)">
+
+        Address Line 1 is required
+
+      </div>
+
+      <div *ngIf="addressLine1.errors?.pattern" style="color: red;">
+
+        Address is not valid.
+
+      </div>
+
+      <br />
+      <!-- /Address Line 1 -->
+
+      <!-- Address Line 2 -->
+      <label for="addressLine2">Address Line 2 </label>
+      <input type="text" class="form-control" pattern="^(\w*\s*[\#\-\,\/\.\(\)\&]*)+" formControlName="addressLine2" />
+      <div class="text-danger" *ngIf="addressLine2.invalid && (addressLine2.dirty || addressLine2.touched)">
+        Address Line 2 is required
+      </div>
+      <div *ngIf="addressLine2.errors?.pattern" style="color: red;">
+        Address is not valid.
+      </div>
+      <br />
+      <!-- /Address Line 2 -->
+
+      <!-- State -->
+      <label for="state">State</label>
+      <input type="text" class="form-control" formControlName="state" (keyup)="complete()" />
+      <ul class="list-group" [hidden]="hideUl">
+        <li class="list-group-item" *ngFor="let item of StateArray" (click)="filltextBox(item)">
+          {{item.state}}
+        </li>
+      </ul>
+      <div class="text-danger" *ngIf="state.invalid && (state.dirty || state.touched)">
+        state is required
+      </div>
+      <div *ngIf="state.errors?.pattern" style="color: red;">
+        state is not valid.
+      </div>
+      <br />
+      <!-- /State -->
+
+      <!-- City -->
+      <label for="city">City </label>
+      <input type="text" class="form-control" formControlName="city" (keyup)="completeCity()" />
+      <ul class="list-group" [hidden]="hideCity">
+        <li class="list-group-item" *ngFor="let item of cityDemo" (click)="fillCityBox(item)">
+          {{item}}
+        </li>
+      </ul>
+
+
+      <div class="text-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
+        City is required
+      </div>
+      <div *ngIf="city.errors?.pattern" style="color: red;">
+        City is not valid.
+      </div>
+      <br />
+      <!-- /City -->
+
+      <!-- PinCode -->
+      <label class="control-label" for="pincode">Pin Code </label>
+
+      <input type="text" class="form-control" pattern="^[1-9][0-9]{5}$" formControlName="pincode" />
+
+      <div class="text-danger" *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)">
+
+        Pin Code is required
+
+      </div>
+
+      <div *ngIf="pincode.errors?.pattern" style="color: red;">
+
+        Pin Code should be 6 digits long
+
+      </div>
+
+      <br />
+
+      <!-- /Pincode -->
+
+      <!-- Register Button -->
+
+      <div class="text-center btn-group btn-block">
+
+        <button (click)="register()" [disabled]="instituteRegistrationForm.invalid"
+          class="btn btn-primary register mr-3 "
+          [ngStyle]="{cursor : instituteRegistrationForm.invalid ? 'no-drop':'pointer'}"
+          title="Please fill the fields to register" style="border-radius : 25px">Register</button>
+
+        <button (click)="cancel()" class="btn btn-danger cancel" style="border-radius : 25px">Cancel</button>
+
+      </div>
+
+      <!-- /Register Button -->
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- /Institute Registeration Form-->
