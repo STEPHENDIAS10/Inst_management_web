@@ -1,0 +1,24 @@
+<div class="row" >
+  <div class="col-lg-6 col-md-8 col-sm-8 col-xs-8 colmn shadow" style=" " >
+      <form class="form" [formGroup] ="profileUpdateform" style="padding: 20px;">
+          <h2 style="margin-left: 10px;">Profile Update</h2>
+          <div class="formGroup frgp" style="margin-left: 10px; ">
+              <label for="firstName" >Firstname : </label>
+              <input id="firstName" class="form-control" type="text" formControlName="firstName">
+
+              <label for="lastName" >Lastname : </label>
+              <input id="lastName" class="form-control" type="text" formControlName="lastName">
+
+              <label for="email" >Email : </label>
+              <input id="email" class="form-control" type="text" formControlName="email">
+
+              <div class="btn-group btn-block btngrp" >
+                  <button class="btn  update btn-primary "  (click)="updateUser()">Update</button>
+                  <button (click)="cancel()" class="btn  cancel btn-danger " >Cancel</button>
+              </div>
+          </div>
+
+      </form>
+  </div>
+</div>
+
