@@ -1,0 +1,41 @@
+css
+
+
+.container
+{
+	background:#fff;
+	padding: 30px;
+	border-radius: 0px;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+
+.colmn {
+	border-radius: 5px; 
+	vertical-align: middle; 
+	margin: auto;
+}
+
+label, .frgp {
+	margin-top: 10px;
+}
+
+.btngrp {
+	padding: 20px 0px 20px 0px; 
+	width: 100%; 
+	
+}
+button {
+	border-radius: 5px;
+}
+.update {
+	
+	width: 50%;
+	margin-right: 10px;
+	
+}
+
+.cancel {
+	
+	width: 50%;
+	
+}
