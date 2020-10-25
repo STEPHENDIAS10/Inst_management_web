@@ -1,0 +1,96 @@
+package aaa;
+
+import java.util.Scanner;
+
+//8 puzz problem
+public class Ai_lab1 
+{
+	int i,j,num;
+	int bodp[][] = new int[3][3];
+	int bodg[][] = new int[3][3];
+	
+	Scanner sc = new Scanner(System.in);
+	
+	boolean check_exis_p(int num)
+	{
+		j=0;
+		for(i=0;i<3;i++) 
+		{
+				if(bodp[i][j] == num || bodp[i][j+1] == num || bodp[i][j+2] == num)
+				{
+					return true;
+				}
+		}
+		return false;
+	}
+	
+	boolean check_exis_g(int num)
+	{
+		j=0;
+		for(i=0;i<3;i++) 
+		{
+				if(bodg[i][j] == num || bodg[i][j+1] == num || bodg[i][j+2] == num)
+				{
+					return true;
+				}
+		}
+		return false;
+	}
+	
+	
+	void input()
+	{
+		System.out.println("This is for problem:...");
+		for(i=0;i<3;i++) 
+		{
+			for(j=0;j<3;j++)
+			{
+				System.out.println("enter 0 for null space ...");
+				num=sc.nextInt();
+				boolean flag = check_exis_p(num);
+				if(!flag)
+				bodp[i][j] = num;
+				else
+					j--;
+			}
+		}
+		System.out.println("this is for goal state ...");
+		for(i=0;i<3;i++) 
+		{
+			for(j=0;j<3;j++)
+			{
+				System.out.println("enter 0 for null space ...");
+				num=sc.nextInt();
+				boolean flag = check_exis_g(num);
+				if(!flag)
+				bodg[i][j] = num;
+				else
+					j--;
+			}
+		}
+	}
+	
+	void disp()
+	{
+		j=0;
+		System.out.println("problem puzzle...");
+		for(i=0;i<3;i++) 
+		{
+				System.out.println(bodp[i][j]+" "+bodp[i][j+1]+" "+bodp[i][j+2]);
+		}
+		
+		System.out.println("Goal state...");
+		for(i=0;i<3;i++) 
+		{
+				System.out.println(bodg[i][j]+" "+bodg[i][j+1]+" "+bodg[i][j+2]);
+		}
+	
+	}
+	public static void main(String[] args) 
+	{
+		Ai_lab1 a1 = new Ai_lab1();
+		a1.input();
+		a1.disp();
+	}
+}
+
