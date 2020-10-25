@@ -1,0 +1,64 @@
+<!-- <p>login works!</p> -->
+
+<div class="row mx-4 my-4">
+    <div  class="col-lg-6 col-md-12 col-sm-12 colnm shadow" >
+        <form class="formGroup" [formGroup]="loginForm">
+            <h2 >Login</h2>
+            <div  class="formGroup frmgrp" >
+                <!-- Firstname -->
+                <label for="email" >Email : </label>
+                <input  [class.is-invalid] = "loginForm.get('email').invalid && loginForm.get('email').touched" class="form-control rounded-5"
+                type="text" formControlName="email">
+
+                <div class="text-danger" *ngIf="email.invalid && (email.dirty|| email.touched) " pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$">
+                    Please enter valid email
+                </div>
+                <div class="text-danger" *ngIf="email.errors?.pattern" >
+                    Email pattern not correct<br>Must be in Format : abcd12@gmail.com
+                  </div>
+                <!-- Firstname -->
+
+                <!-- Lastname -->
+                <label for="password" >Password : </label>
+                <div class="input-group " >
+                <input  [class.is-invalid] = "loginForm.get('password').invalid && loginForm.get('password').touched"
+                class="form-control" type={{typePassword}} formControlName="password">
+
+                <div class="input-group-append " >
+                    <div class="input-group-text bg-white inpgrpapp" >
+                        <span class="material-icons" (click)="toggle()">
+                        {{togglePassword}}
+                        </span>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="text-danger" *ngIf="password.invalid && (password.dirty|| password.touched)">
+                    Please enter valid password<br>Password must contain at least one small letter, one capital letter, at least one number, and be longer than or equal to 8 charaters.
+                </div>
+                <!-- Lastname -->
+
+                <!-- Forget password -->
+                <a class="frpssd" (click)="onForgetPasswordClick()">Forgot Password?</a>
+                <!-- Forget password -->
+
+                <!-- Login and new user button -->
+                <div  class="btn-block btngrp" >
+                    <div class="update btn-block" >
+
+                        <button [disabled]="loginForm.invalid" class="btn btn-block btn-primary" (click)="onLoginClick()"
+                        [ngStyle]="{cursor: loginForm.invalid ? 'no-drop':'pointer'}"  >Login</button>
+                        <!-- nzTooltipTitle="prompt text" nzTooltipPlacement="right" nz-button nz-tooltip -->
+
+                    </div>
+                    <div class="cancel" >
+                        <a class="btn-block " (click)="onRegisterClick()">New User? <span class="reg">SignUp</span> </a>
+                    </div>
+                </div>
+                <!-- Login and new user button -->
+
+              </div>
+        </form>
+    </div>
+</div>

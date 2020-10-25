@@ -1,0 +1,41 @@
+<div class="row mx-4 my-4">
+  <div  class="col-lg-6 col-md-12 col-sm-12 colnm shadow" >
+      <form class="formGroup" [formGroup]="verifyForm">
+          <h2 >Account Verification</h2>
+          <div  class="formGroup frmgrp" >
+              <label for="code" >Verification Code</label>
+              <div class="input-group " >
+              <input  [class.is-invalid] = "verifyForm.get('code').invalid && verifyForm.get('code').touched"
+              class="form-control" type={{typePassword}} formControlName="code">
+
+
+              </div>
+
+              <div class="text-danger" *ngIf="code.invalid && (code.dirty|| code.touched)">
+                  Please enter valid code<br>
+              </div>
+
+
+
+              <div class="cancel" >
+                <a class="btn-block " (click)="onClick()"><span class="reg">Click Here </span>to resend verification Code </a>
+              </div>
+
+
+
+              <div  class="btn-block btngrp" >
+                  <div class="update btn-block" >
+
+                      <button [disabled]="verifyForm.invalid" class="btn btn-block btn-primary" (click)="onVerifyClick()"
+                      [ngStyle]="{cursor: verifyForm.invalid ? 'no-drop':'pointer'}"  >Verify</button>
+                      <!-- nzTooltipTitle="prompt text" nzTooltipPlacement="right" nz-button nz-tooltip -->
+
+                  </div>
+
+              </div>
+
+
+            </div>
+      </form>
+  </div>
+</div>
