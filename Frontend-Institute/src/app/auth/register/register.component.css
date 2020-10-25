@@ -1,0 +1,44 @@
+h2 {
+    margin-bottom: 20px;
+}
+.colmn {
+    padding: 20px;
+}
+
+
+
+input , .inpgrpapp {
+    border-radius: 25px;
+    outline: none;
+}
+
+button {
+    border-radius: 25px;
+    outline: none;
+}
+
+input:hover, :focus {
+    border-color: green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+button:hover {
+    background: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+
+a {
+    color: rgba(133, 133, 133, 0.856);
+    font-weight: 500;
+}
+
+.login:hover {
+    color: blue;
+    text-decoration: underline;
+}
+

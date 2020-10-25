@@ -1,0 +1,70 @@
+<div class="row mx-4 my-4">
+  <div class="col-lg-6 col-md-12 col-sm-12 colnm shadow">
+    <form class="formGroup" [formGroup]="confirmPasswordForm">
+      <h2>Reset Password</h2><br>
+      <div class="formGroup frmgrp">
+        <!-- New  password -->
+        <label for="password">New Password : </label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="{{ typePassword }}"
+            formControlName="newPassword"
+          />
+          <div class="input-group-append">
+            <div class="input-group-text bg-white inpgrpapp">
+              <span class="material-icons" (click)="toggle()">
+                {{ togglePassword }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            newPassword.invalid && (newPassword.dirty || newPassword.touched)
+          "
+        >
+          Please enter valid password<br />Password must contain at least one
+          small letter, one capital letter, at least one number, and be longer
+          than or equal to 8 charaters.
+        </div><br>
+        <!-- New Password -->
+
+        <!-- Confirm Password -->
+        <label for="password">Confirm Password : </label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="{{ typePassword }}"
+            formControlName="confirmPassword"
+            (keyup)="clearError()"
+          />
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            confirmPassword.invalid &&
+            (confirmPassword.dirty || confirmPassword.touched)
+          "
+        >
+          Please enter Confirm password<br/>
+        </div><br>
+        <div *ngIf="passcheck" class="text-danger">Password and Confirm Password MisMatch</div><br>
+        <!-- Conform Password -->
+
+        <div class="btn-block btngrp">
+          <div class="update btn-block">
+            <button
+              [disabled]="confirmPasswordForm.invalid"
+              class="btn btn-block btn-primary"
+              (click)="onClick()"
+            >
+            Reset Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

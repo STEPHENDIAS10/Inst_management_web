@@ -1,0 +1,77 @@
+<!-- HEADER START-->
+<!-- Bootstrap CDN(content delivery network)-->
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container-fluid">
+    <div class="col-12 col-md-4 col-sm-12">
+      <div class="header-logo">
+        <a href="#" class="logo">
+          <!--<img src="./assets/logo.jpg" alt="" />-->
+          <h2>LOGO</h2>
+        </a>
+      </div>
+    </div>
+    
+    <div class="header-link">
+      <ul class="nav justify-content-end">
+        <div class="profile-logo">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="./assets/profile pic.png" alt="" /></a>
+          </li>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" (click)="onLogoutClick()"><button type="button" class="btn btn-secondary btn-lg">Log out</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- HEADER END-->
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="list-group list-group-flush">
+      <a
+      (click)="onCourseClick()"
+        class="list-group-item list-group-item-action bg-light"
+        >Courses</a
+      >
+      <a
+      (click)="onStudentClick()"
+      class="list-group-item list-group-item-action bg-light"
+        >Students</a
+      >
+      <a
+      (click)="onInstituteClick()"
+      class="list-group-item list-group-item-action bg-light"
+        >Institute</a
+      >
+      <a
+      (click)="onProfileClick()"
+      class="list-group-item list-group-item-action bg-light"
+        >Profile</a
+      >
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

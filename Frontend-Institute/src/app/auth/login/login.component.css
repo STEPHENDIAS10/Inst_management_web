@@ -1,0 +1,102 @@
+label {
+    margin-top: 10px;
+    
+    font-weight: bold;
+}
+.rowlm {
+    margin: auto;
+}
+
+.colnm {
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+form {
+    padding: 20px;
+}
+
+form h2,
+.frmgrp {
+    margin-left: 10px;
+}
+
+input {
+    border-radius: 25px;
+    outline: none;
+    /* padding-left: 40px; */
+}
+
+/* .email-icon {
+    position: absolute;
+    margin-left: 12px;
+    margin-top: -31px;
+}
+.pass-icon {
+    position: absolute;
+    margin-left: 12px;
+    margin-bottom: -40px;
+} */
+
+.inpgrpapp {
+    border-radius: 25px;
+}
+
+.btngrp {
+    padding: 20px 0px 20px 0px; 
+    
+}
+
+button {
+    border-radius: 25px;
+}
+
+.update, .cancel {
+    width: 100%;
+}
+
+.cancel { 
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgba(133, 133, 133, 0.856);
+    font-weight: 500;
+    text-align: center;
+    /* margin: 10px 0px 10px 0px; */
+}
+
+input:hover,:focus {
+    border-color: green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+
+
+button:hover {
+    /* background: linear-gradient(to right, #009FFF 0%, #ec2F4B 100%); */
+    background: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+/* a:hover {
+    text-decoration: underline;
+} */
+
+.frpssd {
+    float: right;
+    text-decoration: none;
+    color: rgba(133, 133, 133, 0.856);
+    font-weight: 500;
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
+}
+
+.reg:hover {
+    color: #0062cc;
+    text-decoration: underline;
+    cursor: pointer;
+}

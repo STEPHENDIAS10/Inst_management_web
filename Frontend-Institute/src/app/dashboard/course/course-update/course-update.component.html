@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>Course Update Form</h2>
+    <form [formGroup]="courseUpdateForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="courseName">Course Name</label>
+          <input [class.is-invalid] = "courseUpdateForm.get('courseName').invalid && courseUpdateForm.get('courseName').touched"
+            type="text" class="form-control" formControlName = "courseName" id="courseName" placeholder="Enter Course Name">
+          <div *ngIf="(courseNameValidate.invalid && courseNameValidate.touched) || courseNameValidate.dirty">
+            <h6 style="text-align: left;" *ngIf="courseNameValidate.errors?.required" class="text-danger">*Course name is required</h6>
+            <h6 style="text-align: left;" *ngIf="courseNameValidate.errors?.pattern" class="text-danger">*Please provide a valid Course name</h6>
+          </div>
+        </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="duration">Duration</label>
+            <input [class.is-invalid] = "courseUpdateForm.get('duration').invalid && courseUpdateForm.get('duration').touched"
+              list="numbers" class="form-control" formControlName = "duration" placeholder="Choose" onfocus="this.value=''">
+            <datalist id="numbers">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </datalist>
+            <div *ngIf="(durationValidate.invalid && durationValidate.touched) || durationValidate.dirty">
+              <h6 style="text-align: left;" *ngIf="durationValidate.errors?.required" class="text-danger">*Duration is required</h6>
+            </div>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="value">Value:</label>
+            <input [class.is-invalid] = "courseUpdateForm.get('value').invalid && courseUpdateForm.get('value').touched"
+              list="list-value" class="form-control" formControlName = "value" placeholder="Years/Months">
+            <datalist id="list-value">
+              <option>Months</option>
+              <option>Years</option>
+            </datalist>
+            <div *ngIf="(valueValidate.invalid && valueValidate.touched) || valueValidate.dirty">
+              <h6 style="text-align: left;" *ngIf="valueValidate.errors?.required" class="text-danger">*Value is required</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+          <label for="fess">Fees:</label>
+          <input [class.is-invalid] = "courseUpdateForm.get('fees').invalid && courseUpdateForm.get('fees').touched"
+            type="text" class="form-control" id="fees" formControlName = "fees" placeholder="Enter Fees">
+          <div *ngIf="(feesValidate.invalid && feesValidate.touched) || feesValidate.dirty">
+            <h6 style="text-align: left;" *ngIf="feesValidate.errors?.required" class="text-danger">*Fees is required</h6>
+            <h6 style="text-align: left;" *ngIf="feesValidate.errors?.pattern" class="text-danger">*Please provide a valid Fees</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <button type="submit" class="btn btn-success" (click)="updateCourse()" >Update</button>
+        </div>
+
+        <div class="form-group col-md-2">
+          <button (click)="cancel()" type="button" class="btn btn-danger" >Cancel</button>
+        </div>
+      </div>
+    </form>
+</div>

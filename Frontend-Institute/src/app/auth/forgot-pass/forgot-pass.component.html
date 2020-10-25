@@ -1,0 +1,30 @@
+<!-- <p>login works!</p> -->
+
+<!-- <p>student-update works!</p> -->
+
+<div class="row mx-4 my-4">
+  <div  class="col-lg-6 col-md-12 col-sm-12 colnm shadow" >
+      <form class="formGroup" [formGroup]="forgotPasswordForm">
+          <h2 >Forgot Password Page</h2>
+          <div  class="formGroup frmgrp" >
+              <!-- Email -->
+              <label for="email" >Email : </label>
+              <input  class="form-control" type="text" formControlName="email">
+              <div class="text-danger" *ngIf="email.invalid && (email.dirty|| email.touched)">
+                  Please enter valid email<br>Must be in Format : abcd12@gmail.com
+              </div>
+              <!-- Email -->
+
+              <!-- Login and new user button -->
+              <div  class="btn-block btngrp" >
+                  <div class="update btn-block" >
+                      <button [disabled]="forgotPasswordForm.invalid" class="btn btn-block btn-primary" (click)="onClick()" >Forgot Password</button>
+                  </div>
+              </div>
+              <!-- Login and new user button -->
+
+          </div>
+
+      </form>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<!-- Material Icons for password eye -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Material Icons for password eye -->
+
+<!-- User Registeration form -->
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center mx-4 my-4">
+    <div class=" col-sm-8 col-md-8 col-lg-6  shadow-lg p-3 mb-5 rounded ">
+
+      <form [formGroup]="regsiterForm" class="colmn">
+        <h2>Register</h2>
+
+        <!-- First Name -->
+        <div class="form-group" >
+          <label class="alert-link control-label" for="exampleInputPassword1">FirstName: </label>
+          <input required [class.is-invalid] = "regsiterForm.get('firstName').invalid && regsiterForm.get('firstName').touched"
+          formControlName="firstName" type="text" class="form-control"  name="FirstName"
+            pattern="[a-zA-Z]*">
+
+          <div class="help-block text-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">Please enter First
+            Name
+          </div>
+          <div class="help-block text-danger" *ngIf="firstName.errors?.pattern"><br>Should contain Alphabets only</div>
+        </div>
+        <!-- First Name -->
+
+        <!-- Last Name -->
+        <div class="form-group" >
+          <label class="alert-link control-label" for="exampleInputPassword1">LastName: </label>
+          <input required [class.is-invalid] = "regsiterForm.get('lastName').invalid && regsiterForm.get('lastName').touched"
+          formControlName="lastName" type="text" class="form-control" name="LastName"
+            pattern="[a-zA-Z]*">
+
+          <div class="help-block text-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">Please enter Last
+            Name
+          </div>
+          <div class="help-block text-danger" *ngIf="lastName.errors?.pattern"><br>Should contain Alphabets only</div>
+        </div>
+        <!-- Last Name -->
+
+
+        <!-- Email ID -->
+        <div class="form-group" >
+          <label class="alert-link control-label" for="exampleInputPassword1">Email Id: </label>
+          <input required [class.is-invalid] = "regsiterForm.get('email').invalid && regsiterForm.get('email').touched"
+          formControlName="email" type="email" class="form-control" name="Email"
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+
+          <div class="help-block text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">Please enter Email
+            Id
+          </div>
+          <div class="help-block text-danger" *ngIf="email.errors?.pattern"><br>You can use letters, numbers, periods and
+            underscore</div>
+        </div>
+        <!-- Email ID -->
+
+        <!-- Password -->
+        <div class="form-group" >
+          <label class="alert-link control-label" for="exampleInputPassword1">Password: </label>
+          <div class="input-group">
+            <input required [class.is-invalid] = "regsiterForm.get('password').invalid && regsiterForm.get('password').touched"
+            data-toggle="password" formControlName="password" type="{{typePassword}}" class="form-control"
+              name="Password"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}">
+            <div class="input-group-append">
+              <div class="input-group-text bg-white inpgrpapp"><span class="material-icons" (click)="toggle()">
+                  {{togglePassword}}
+                </span></div>
+            </div>
+          </div>
+          <div class="help-block text-danger" *ngIf="password.errors && (password.dirty || password.touched)">Please enter valid
+            Password
+          </div>
+          <div class="help-block text-danger" *ngIf="password.errors?.pattern"><br>Use 8 or more characters with a mix of letters,
+            numbers & symbols ;)</div>
+        </div>
+        <!-- Password -->
+
+        <!-- Register Button -->
+        <button [disabled]="regsiterForm.invalid" type="submit" 
+        [ngStyle]="{cursor: regsiterForm.invalid? 'no-drop': 'pointer'}"
+        class="btn btn-primary btn-block btn-group-lg mt-4 " (click)="onSubmit()">REGISTER </button>
+        <!-- Register Button -->
+        <div class="form-group float-right mt-3">
+            <a (click)="onClickLogin()">Already Register? <span class="login">Login</span>
+            </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- User Registeration Form -->
