@@ -1,0 +1,36 @@
+input {
+    border-radius: 25px;
+}
+
+input:hover, :focus {
+    border-color: green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+button {
+    border-radius: 25px;
+}
+
+.register:hover {
+    border-color: #007bff ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+.cancel:hover {
+    border-color:  #c82333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+.register {
+    border-radius: 25px;
+}
+
+.cancel {
+    border-radius: 25px;
+}
