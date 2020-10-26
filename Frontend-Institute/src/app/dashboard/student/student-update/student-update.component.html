@@ -1,0 +1,34 @@
+
+
+<div class="row" style="/*border: 1px solid black;*/">
+    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-8 shadow" style="/*border: 1px solid red;*/ border-radius: 5px; vertical-align: middle; margin: auto;" >
+        <form class="form" [formGroup]="studentupdateform" style="/*border: 1px solid blue;*/ padding: 20px;">
+            <h2 style="margin-left: 10px;">Student Update</h2>
+            <div class="formGroup" style="margin-left: 10px; /*border: 1px solid green;*/">
+                <label for="firstName" style="margin-top: 10px;">Firstname : </label>
+                <input id="firstName" class="form-control" type="text" formControlName="firstname">
+
+                <label for="lastName" style="margin-top: 10px;">Lastname : </label>
+                <input id="lastName" class="form-control" type="text" formControlName="lastname">
+
+                <label for="email" style="margin-top: 10px;">Email : </label>
+                <input id="email" class="form-control" type="text" formControlName="email">
+
+                <label for="courses" style="margin-top: 10px;">Courses enrolled : </label>
+
+                <ng-multiselect-dropdown name="courses" [settings]="dropdownSettings" [data]="Courses" formControlName="courses"
+                [attr.disabled]="disabled"></ng-multiselect-dropdown>
+
+                <div class="text-danger" *ngIf="coursesvalidate.invalid && (coursesvalidate.dirty || coursesvalidate.touched)">
+                Course is Required
+                </div>
+
+                <div class="btn-group btn-block btngrp" >
+                  <button class="btn  update btn-primary "  (click)="updateStudent()">Update</button>
+                  <button (click)="cancel()" class="btn  cancel btn-danger " >Cancel</button>
+              </div>
+            </div>
+
+        </form>
+    </div>
+</div>
